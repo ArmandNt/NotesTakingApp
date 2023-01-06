@@ -66,13 +66,13 @@ namespace NotesTakingApp
         {
             //listView.Items.Remove(listView.SelectedItems);
             //listView.Items.Refresh();
-            MessageBox.Show("Deleted " + listView.SelectedItems);
+            MessageBox.Show("Deleted: " + listView.SelectedItem);
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             //Note noteSelected = listView.SelectedItems as Note;
-            MessageBox.Show("Deleted " + listView.SelectedItems);
+            MessageBox.Show("Edited: " + listView.SelectedItem);
         }
     }
 }
