@@ -1,0 +1,63 @@
+﻿<Window x:Class="NotesTakingApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotesTakingApp"
+        mc:Ignorable="d"
+        Title="MyNotes" Height="600" Width="600" WindowStyle="ThreeDBorderWindow" Background="SaddleBrown">
+    <Grid>
+        <TabControl x:Name="tabControl" Background="SaddleBrown">
+            <TabItem Header="Browse" Background="DarkOrange">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="400"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="All Notes" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+                    <ListView Name="listView" Grid.Row="1" Grid.Column="0" Grid.RowSpan="8" Grid.ColumnSpan="3" Width="500" Height="370" VerticalAlignment="Top" ScrollViewer.CanContentScroll="True" Margin="0,10,0,0" FontWeight="Bold" Background="SaddleBrown">
+                        <ListView.Resources>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="Background"
+                                        Value="DarkOrange"/>
+                            </Style>
+                        </ListView.Resources>
+                    </ListView>
+                    <Button x:Name="btnEdit" Content="Edit" Grid.Row="8" Grid.Column="1" Grid.RowSpan="9" HorizontalAlignment="Left" FontSize="20" Width="120" Height="50" Background="DarkOrange" Margin="0,2,0,0" Click="btnEdit_Click"/>
+                    <Button x:Name="btnDelete" Content="Delete" Grid.Row="8" Grid.Column="1" Grid.RowSpan="9" HorizontalAlignment="Right" FontSize="20" Width="120" Height="50" Background="DarkOrange" Margin="0,2,0,0" Click="btnDelete_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Note" Background="DarkOrange">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="325"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="400"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="txtboxTitle" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" VerticalContentAlignment="Bottom" TextAlignment="Center" Height="20" Width="200" Background="SaddleBrown"/>
+                    <TextBox x:Name="txtboxNote" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3" VerticalAlignment="Top" Height="auto" MinHeight="320" MaxHeight="350" Width="500" Margin="42.5,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="SaddleBrown"/>
+                    <Button x:Name="btnClear" Content="Clear" FontSize="20" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Width="120" Height="50" Click="btnClear_Click" Background="DarkOrange"/>
+                    <Button x:Name="btnSave" Content="Save" FontSize="20" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Width="120" Height="50" Click="btnSave_Click" Background="DarkOrange"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
