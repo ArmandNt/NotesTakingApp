@@ -43,7 +43,11 @@ namespace NotesTakingApp
             }
             else
             {
-                if (String.IsNullOrEmpty(txtboxNote.Text))
+                if(txtboxTitle.Text.Length > 15)
+                {
+                    MessageBox.Show("The Title Has To Be Between 1 and 15 Characters, Try Again!");
+                }
+                else if (String.IsNullOrEmpty(txtboxNote.Text))
                 {
                     MessageBox.Show("Can't Save An Empty Note ☹️, Type Something!");
                 }
@@ -73,6 +77,12 @@ namespace NotesTakingApp
         {
             //Note noteSelected = listView.SelectedItems as Note;
             MessageBox.Show("Edited: " + listView.SelectedItem);
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Session terminated!");
+            Environment.Exit(0);
         }
     }
 }

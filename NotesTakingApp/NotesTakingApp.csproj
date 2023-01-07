@@ -9,7 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="turn_off.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Treetog-Junior-Document-yellow.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="turn_off.png" />
   </ItemGroup>
 
 	
