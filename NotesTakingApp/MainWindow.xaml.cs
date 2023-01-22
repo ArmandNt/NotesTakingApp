@@ -53,6 +53,7 @@ namespace NotesTakingApp
                 }
                 else
                 {
+                    MessageBox.Show("Note saved!");
                     notes.Add(new Note(txtboxTitle.Text, txtboxNote.Text));
                     listView.Items.Add(txtboxTitle.Text + " : " + txtboxNote.Text);
                     clearNoteContent();
@@ -60,6 +61,9 @@ namespace NotesTakingApp
             }
         }
 
+        /// <summary>
+        /// Method to clear content from the Note tab.
+        /// </summary>
         public void clearNoteContent()
         {
             txtboxTitle.Text = "";
@@ -68,15 +72,26 @@ namespace NotesTakingApp
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            //listView.Items.Remove(listView.SelectedItems);
-            //listView.Items.Refresh();
-            MessageBox.Show("Deleted: " + listView.SelectedItem);
+            if (listView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Nothing to delete, Try Again!");
+            }
+            else
+            {
+                MessageBox.Show("Deleted: " + listView.SelectedItem);
+            }
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            //Note noteSelected = listView.SelectedItems as Note;
-            MessageBox.Show("Edited: " + listView.SelectedItem);
+            if (listView.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Nothing to edit, Try Again!");
+            }
+            else
+            {
+                MessageBox.Show("Selected: " + listView.SelectedItem + " to edit.");
+            }
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
